@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Portfolio</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+        <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #f6f5f3, #eae7e2);
+            color: #444;
+        }
+
+        /* HEADER */
+        header {
+            background: linear-gradient(135deg, rgba(202, 216, 208, 0.9), rgba(238, 232, 226, 0.9));
+            backdrop-filter: blur(8px);
+            padding: 30px 20px 60px 20px;
+            position: relative;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        nav ul { list-style: none; display: flex; }
+        nav ul li { margin-left: 20px; }
+        nav ul li a {
+            color: #555;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        nav ul li a:hover { color: #6b9080; }
+
+        .logo { font-size: 1.8em; font-weight: bold; color: #6b9080; }
+
+        .profile-img {
+            position: absolute;
+            top: 80px;
+            right: 20px;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border: 4px solid #fff;
+            border-radius: 50%;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%,100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .hero { text-align: center; margin-top: 50px; }
+        .hero h2 {
+            font-size: 2.4em; color: #333;
+            animation: fadeInDown 1s ease forwards;
+        }
+        .hero h2 span { color: #6b9080; }
+        .btn {
+            padding: 12px 25px; background: #6b9080; color: white;
+            border-radius: 25px; text-decoration: none;
+            margin-top: 20px; display:inline-block;
+            transition: 0.3s;
+        }
+        .btn:hover { background:#56766b; transform: translateY(-2px); }
+
+        /* SECTIONS */
+        section {
+            padding: 50px 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        section h2 {
+            text-align: center; margin-bottom: 20px;
+            color: #6b9080; font-size: 1.8em;
+        }
+        /* ================= EDUCATION SECTION ================= */
+
+/* ================= EDUCATION SECTION ================= */
+
+#education {
+    padding: 30px 20px;
+}
+
+/* Wider main container */
+.education-container {
+    background: #ffffff;
+    max-width: 1100px;        /* 🔥 increased width */
+    margin: 40px auto;
+    padding: 35px 45px;       /* reduced vertical padding */
+    border-radius: 22px;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
+    transition: all 0.3s ease;
+}
+
+/* Hover lift */
+.education-container:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 22px 55px rgba(0, 0, 0, 0.22);
+}
+
+/* Heading */
+.education-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.2rem;
+    color: #6b9080;
+}
+
+/* Education card */
+.education-card {
+    background: #f6f9ff;
+    padding: 18px 22px;      /* reduced height */
+    border-radius: 16px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.education-card:hover {
+    background: #6b9080;
+    color: #ffffff;
+    transform: scale(1.015);
+}
+
+/* Title */
+.education-card h3 {
+    margin-bottom: 5px;
+    font-size: 1.25rem;
+}
+
+/* College name */
+.edu-college {
+    display: inline-block;
+    font-weight: 600;
+    margin-right: 15px;
+}
+
+/* Year inline */
+.edu-year {
+    display: inline-block;
+    font-size: 0.9rem;
+    opacity: 0.85;
+}
+
+/* Description */
+.education-card p {
+    margin-top: 8px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .education-container {
+        padding: 30px 25px;
+    }
+
+    .edu-college,
+    .edu-year {
+        display: block;
+    }
+}
+/* ================= CERTIFICATES (CARD STYLE) ================= */
+
+#certificates {
+    padding: 30px 20px;
+}
+
+/* Main container */
+.certificates-container {
+    background: #ffffff;
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 40px 45px;
+    border-radius: 22px;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
+}
+
+/* Heading */
+.certificates-container h2 {
+    text-align: center;
+    margin-bottom: 35px;
+    font-size: 2.2rem;
+    color: #6b9080;
+}
+
+/* Grid layout */
+.certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+/* Individual certificate card */
+.certificate-card {
+    background: #f6f9ff;
+    padding: 22px;
+    border-radius: 18px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Hover effect */
+.certificate-card:hover {
+    background: #6b9080;
+    color: #ffffff;
+    transform: translateY(-8px);
+    box-shadow: 0 18px 40px rgba(107, 144, 128, 0.45);
+}
+
+/* Title */
+.certificate-card h3 {
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+}
+
+/* Organization & year */
+.cert-org {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.cert-year {
+    font-size: 0.9rem;
+    opacity: 0.85;
+}
+
+/* Description */
+.certificate-card p {
+    margin-top: 10px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .certificates-container {
+        padding: 30px 25px;
+    }
+}
+
+/* ================= SKILLS SECTION ================= */
+
+#skills {
+    padding: 40px 20px;     /* minimal spacing only */
+    background: transparent; /* REMOVE back container */
+}
+
+/* ONLY skills card */
+.skills-container {
+    background: #ffffff;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 45px 35px;
+    border-radius: 22px;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
+    transition: all 0.3s ease;
+}
+
+/* Hover lift */
+.skills-container:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 55px rgba(0, 0, 0, 0.22);
+}
+
+/* Heading */
+.skills-container h2 {
+    text-align: center;
+    margin-bottom: 35px;
+    font-size: 2.1rem;
+    color: #6b9080;
+}
+
+/* Skills row */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 25px;
+}
+
+/* Skill pill */
+.skill {
+    background: #eef3ff;
+    padding: 16px;
+    border-radius: 14px;
+    text-align: center;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.skill:hover {
+    background: #6b9080;
+    color: #fff;
+    transform: scale(1.08);
+    box-shadow: 0 10px 25px rgba(107, 144, 128, 0.45);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .skills-container {
+        padding: 30px 20px;
+    }
+}
+
+
+
+        /* NEW MULTI-CARD CAROUSEL */
+        .multi-carousel-container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .multi-carousel-slide {
+            display: flex;
+            gap: 20px;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .multi-card {
+            min-width: calc(33.33% - 20px);
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            padding: 15px;
+            text-align: center;
+        }
+
+        .multi-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .multi-btn {
+            position: absolute;
+            top: 45%;
+            transform: translateY(-50%);
+            background: #6b9080;
+            color: #fff;
+            border: none;
+            font-size: 22px;
+            padding: 8px 14px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 100;
+        }
+
+        #multiPrev { left: 0; }
+        #multiNext { right: 0; }
+
+        /* RESPONSIVE */
+        @media(max-width: 900px) {
+            .multi-card { min-width: 50%; }
+        }
+        @media(max-width: 600px) {
+            .multi-card { min-width: 100%; }
+        }
+
+        footer {
+            background: #eae7e2; color: #555;
+            text-align:center; padding: 15px 0;
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+
+        /* ================= CONTACT SECTION ================= */
+
+#contact {
+    padding: 60px 20px;
+}
+
+.contact-card {
+    background: #ffffff;
+    max-width: 900px;
+    margin: auto;
+    padding: 55px 40px;
+    border-radius: 22px;
+    text-align: center;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
+    transition: all 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 25px 55px rgba(0, 0, 0, 0.22);
+}
+
+.contact-card h2 {
+    font-size: 2.2rem;
+    color: #6b9080;
+    margin: 25px 0;
+}
+
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    margin: 25px 0;
+}
+
+.contact-icons a {
+    font-size: 34px;
+    transition: all 0.3s ease;
+}
+
+.contact-icons a:nth-child(1) { color: #e4405f; }   /* Instagram */
+.contact-icons a:nth-child(2) { color: #0a66c2; }   /* LinkedIn */
+.contact-icons a:nth-child(3) { color: #d44638; }   /* Email */
+
+.contact-icons a:hover {
+    transform: scale(1.25);
+}
+
+.contact-line {
+    width: 80%;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.2);
+    margin: 0 auto;
+}
+
+.contact-quote {
+    font-style: italic;
+    font-size: 1.05rem;
+    color: #444;
+    margin-top: 25px;
+    line-height: 1.6;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .contact-card {
+        padding: 40px 25px;
+    }
+
+    .contact-icons {
+        gap: 25px;
+    }
+
+    .contact-icons a {
+        font-size: 28px;
+    }
+    /* ================= MOBILE RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+
+    /* NAVIGATION STACK */
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    nav ul li {
+        margin: 0;
+    }
+
+    /* PROFILE IMAGE CENTER */
+    .profile-img {
+        position: static;
+        display: block;
+        margin: 25px auto 0 auto;
+        width: 160px;
+        height: 160px;
+    }
+
+    /* HERO SECTION */
+    .hero {
+        margin-top: 20px;
+        padding: 0 15px;
+    }
+
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+
+    .hero p {
+        font-size: 0.95rem;
+    }
+
+    /* BUTTON STACK */
+    .btn {
+        display: block;
+        width: 80%;
+        margin: 12px auto;
+        text-align: center;
+    }
+
+    /* EDUCATION */
+    .education-container {
+        padding: 25px 20px;
+    }
+
+    /* SKILLS */
+    .skills-container {
+        padding: 25px 20px;
+    }
+
+    /* CERTIFICATES */
+    .certificates-container {
+        padding: 25px 20px;
+    }
+
+    /* CONTACT */
+    .contact-card {
+        padding: 30px 20px;
+    }
+}
+}
+
+    </style>
+    </head>
+
+    <body>
+
+        <header>
+            <nav>
+                <h1 class="logo">Soundarya D</h1>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <img src="portfolio image.jpg.jpeg" class="profile-img">
+
+            <div class="hero">
+                <h2>Hi, I’m <span>Soundarya</span></h2>
+                <p>A passionate Full Stack Developer</p>
+                <a href="#projects" class="btn">View My Work</a>
+                <a href="SOUNDARYA D (new resume).pdf" class="btn"
+                    target="_blank">Download Resume</a>
+            </div>
+        </header>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <p style="text-align:center;">
+                I am a FullStack Developer with a passion for creating clean,
+                modern, and user-friendly solutions.
+                My goal is to combine creativity with functionality to deliver
+                impactful results.
+            </p>
+        </section>
+        <section id="education">
+            <h2> Education 🎓</h2>
+            <div class="education-container">
+                `
+
+                <div class="education-card">
+                    <h3>👩‍🎓 Bachelor of Engineering – Information
+                        Technology</h3>
+                    <span class="edu-college">🏫 M Kumarasamy College of
+                        Engineering</span>
+                    <span class="edu-year">📅 2023 – 2027</span>
+                    <p>CGPA - 7.9 (Until 4th semester)</p>
+                    <p>Focused on software development, data structures,
+                        databases, and full-stack web technologies.</p>
+                </div>
+
+                <div class="education-card">
+                    <h3>🎓 Higher Secondary Education (HSC)</h3>
+                    <span class="edu-college">🏫 Vivekananda Matriculation
+                        Higher secondary School</span>
+                    <span class="edu-year">📅 2022 – 2023</span>
+                    <p>Percentage - 89%</p>
+                    <p>Strong foundation in Mathematics, Physics, and Computer
+                        Science.</p>
+                </div>
+
+                <div class="education-card">
+                    <h3>📘 Secondary School Leaving Certificate (SSLC)</h3>
+                    <span class="edu-college">🏫 R.N.Oxford Matriculation
+                        School</span>
+                    <span class="edu-year">📅 2020 – 2021</span>
+                    <p>Built strong academic fundamentals with consistent
+                        performance.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skills-container">
+                <div class="skills-grid">
+                    <div class="skill">HTML</div>
+                    <div class="skill">CSS</div>
+                    <div class="skill">JavaScript</div>
+                    <div class="skill">Python</div>
+                    <div class="skill">GitHub</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- REPLACED SINGLE SLIDE WITH MULTI-CARD CAROUSEL -->
+        <section id="projects">
+            <h2>Projects</h2>
+
+            <div class="multi-carousel-container">
+
+                <button class="multi-btn" id="multiPrev">&#10094;</button>
+                <button class="multi-btn" id="multiNext">&#10095;</button>
+
+                <div class="multi-carousel-slide" id="multiSlide">
+
+                    <div class="multi-card">
+                        <img src="farm.png">
+                        <h3>Smart Farming</h3>
+                        <p>It is web based application especially for farmer to
+                            sell their products directly to customer without an
+                            intermediater.</p>
+                        <a
+                            href="https://github.com/Soundaryadhanasekeran/Smart-Farming.git">View
+                            Project</a>
+                    </div>
+
+                    <div class="multi-card">
+                        <img src="city guide dashboard.png">
+                        <h3>City Guide for Restaurants</h3>
+                        <p>Its moverover like a map for restaurant.It suggests
+                            best restuarant to user based on their
+                            location,cuisine they choose and rating.</p>
+                        <a href="https://github.com/Soundaryadhanasekeran/RestaurantFinds.git">View
+                            Project</a>
+                    </div>
+
+
+                    <div class="multi-card">
+                        <img src="eda image1.jpg">
+                        <h3>Epilepsy Seizure Detection System</h3>
+                        <p>Epileptic seizure detection is a system that analyzes
+                            EEG brain signals to automatically identify abnormal
+                            patterns that indicate a seizure.</p>
+                        <a href="https://github.com/Soundaryadhanasekeran/Epileptic-seizure-detection.git">View Project</a>
+                    </div>
+                    <div class="multi-card">
+                        <img src="phraseMiner UI.png">
+                        <h3>Phrase Miner</h3>
+                        <p>A Word Frequency Counter is a small but powerful
+                            text-processing project that analyzes a given text
+                            and determines how many times each word appears.</p>
+                        <a href="https://github.com/Soundaryadhanasekaran/Phrase-Miner.git">View Project</a>
+                    </div>
+                    <div class="multi-card">
+                        <img
+                            src="https://cropsandsoils.extension.wisc.edu/files/2023/09/wheat1.jpg">
+                        <h3>WeatherBasedCrop Recommendation System</h3>
+                        <p>This system analyzes weather parameters to suggest
+                            the best crop for cultivation. </p>
+                        <a
+                            href="https://github.com/Soundaryadhanasekeran/WeatherBasedcrop-Recommendation-System.git">View
+                            Project</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section id="certificates">
+            <h2>📜 Certificates 📜</h2>
+            <div class="certificates-container">
+
+                <div class="certificates-grid">
+
+
+<div class="certificate-card">
+    <h3>🎨 Fundamentals of Graphic Design</h3>
+    <span class="cert-org">Online Learning Platform</span>
+    <span class="cert-year">2025</span>
+    <p>
+        Learned core design principles including color theory, typography,
+        layout design, and visual communication using design tools.
+    </p>
+</div>
+
+<div class="certificate-card">
+    <h3>📊 Data Science</h3>
+    <span class="cert-org">Training / Certification Program</span>
+    <span class="cert-year">2025</span>
+    <p>
+        Designing and understanding smart connected systems where devices communicate,
+         collect data, and automate real-world processes seamlessly.
+    </p>
+</div>
+<div class="certificate-card">
+    <h3>🌐 Intoduction to Internet of Things</h3>
+    <span class="cert-org">Training / Certification Program</span>
+    <span class="cert-year">2024</span>
+    <p>
+        Acquired practical knowledge of data analysis, data visualization,
+        statistics, and machine learning concepts using Python.
+    </p>
+</div>
+
+
+
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="contact-card">
+                <div class="contact-line"></div>
+
+                <h2>Let’s Connect</h2>
+
+                <div class="contact-icons">
+                    <a href="https://github.com/Soundaryadhanasekaran" target="_blank"
+                        aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/soundarya-d-3bb093290"
+                        target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="soundaryadhanas6155@gmail.com" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+
+                <div class="contact-line"></div>
+
+                <p class="contact-quote">
+                    “Live gently, dream deeply, and let every little thing you
+                    love become your story.”
+                </p>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2026 Soundarya. All Rights Reserved.</p>
+        </footer>
+
+        <script>
+let index = 0;
+const slide = document.getElementById("multiSlide");
+const cards = document.querySelectorAll(".multi-card");
+
+function getVisibleCards() {
+    if (window.innerWidth < 600) return 1;
+    if (window.innerWidth < 900) return 2;
+    return 3;
+}
+
+document.getElementById("multiNext").onclick = () => {
+    const visible = getVisibleCards();
+    index = Math.min(index + 1, cards.length - visible);
+    const cardWidth = cards[0].offsetWidth + 20;
+    slide.style.transform = `translateX(-${index * cardWidth}px)`;
+};
+
+document.getElementById("multiPrev").onclick = () => {
+    index = Math.max(index - 1, 0);
+    const cardWidth = cards[0].offsetWidth + 20;
+    slide.style.transform = `translateX(-${index * cardWidth}px)`;
+};
+
+window.addEventListener("resize", () => {
+    index = 0;
+    slide.style.transform = "translateX(0)";
+});
+</script>
+
+    </body>
+</html>
